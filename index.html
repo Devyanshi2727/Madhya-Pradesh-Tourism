@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhya Pradesh Tourism - The Heart of Incredible India</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Third-party CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-dharmachakra emblem-icon"></i>
+        <div class="brand-text">
+          <span class="title">Madhya Pradesh</span>
+          <span class="tagline">The Heart of Incredible India</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#plan">Plan Your Trip</a></li>
+        <li><a href="#explore-map">Interactive Map</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/917987407620" target="_blank" class="social-btn wa" title="Chat on WhatsApp (+91 7987407620)">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-btn ig" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#plan" class="btn-explore">Plan Your Trip</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="location-badge">
+      <i class="fa-solid fa-location-dot"></i>
+      <div>
+        <strong>Gwalior Fort</strong><br>
+        <span style="font-size: 0.75rem; opacity: 0.85;">Gwalior, Madhya Pradesh</span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-subhead">DISCOVER</div>
+      <h1 class="hero-title">Madhya Pradesh</h1>
+      <p class="hero-desc">Where History, Nature and Spirituality Meet</p>
+      <div class="hero-tags">TIMELESS &nbsp;|&nbsp; DIVERSE &nbsp;|&nbsp; UNFORGETTABLE</div>
+      <a href="https://wa.me/917987407620?text=Hi!%20I%20am%20interested%20in%20planning%20a%20trip%20to%20Madhya%20Pradesh." target="_blank" class="hero-cta">
+        Explore Now &nbsp;&rarr;
+      </a>
+    </div>
+
+    <div class="cursive-accent">
+      More<br>than a destination<br>A feeling
+    </div>
+  </section>
+
+  <!-- Top Destinations Gallery -->
+  <section class="destinations-section" id="destinations">
+    <div class="section-header">
+      <div>
+        <span class="section-eyebrow">- EXPLORE -</span>
+        <h2 class="section-main-title">Top Destinations</h2>
+      </div>
+      
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+        <button class="filter-btn" onclick="filterCards('heritage', this)">Heritage</button>
+        <button class="filter-btn" onclick="filterCards('spiritual', this)">Spiritual</button>
+        <button class="filter-btn" onclick="filterCards('wildlife', this)">Wildlife</button>
+        <button class="filter-btn" onclick="filterCards('nature', this)">Nature</button>
+      </div>
+    </div>
+
+    <div class="card-grid" id="cardGrid">
+      
+      <!-- 1. Khajuraho -->
+      <div class="destination-card" data-category="heritage">
+        <img 
+          src="https://images.unsplash.com/photo-1606298855672-3efb63017be8?q=80&w=700&auto=format&fit=crop" 
+          onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Kandariya_Mahadeva_Temple.jpg/800px-Kandariya_Mahadeva_Temple.jpg';" 
+          alt="Khajuraho Temples" 
+        />
+        <div class="destination-overlay">
+          <span class="badge-tag">Heritage</span>
+          <h3 class="destination-name">Khajuraho</h3>
+          <p class="destination-tagline">Temples of Art & Culture</p>
+        </div>
+      </div>
+
+      <!-- 2. Ujjain -->
+      <div class="destination-card" data-category="spiritual">
+        <img src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?q=80&w=700&auto=format&fit=crop" alt="Ujjain" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Spiritual</span>
+          <h3 class="destination-name">Ujjain</h3>
+          <p class="destination-tagline">City of Mahakal</p>
+        </div>
+      </div>
+
+      <!-- 3. Sanchi -->
+      <div class="destination-card" data-category="heritage">
+        <img src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=700&auto=format&fit=crop" alt="Sanchi" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Heritage</span>
+          <h3 class="destination-name">Sanchi</h3>
+          <p class="destination-tagline">A Legacy of Peace</p>
+        </div>
+      </div>
+
+      <!-- 4. Pachmarhi -->
+      <div class="destination-card" data-category="nature">
+        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=700&auto=format&fit=crop" alt="Pachmarhi" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Nature</span>
+          <h3 class="destination-name">Pachmarhi</h3>
+          <p class="destination-tagline">The Queen of Satpura</p>
+        </div>
+      </div>
+
+      <!-- 5. Bhedaghat -->
+      <div class="destination-card" data-category="nature">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=700&auto=format&fit=crop" alt="Bhedaghat" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Nature</span>
+          <h3 class="destination-name">Bhedaghat</h3>
+          <p class="destination-tagline">Nature's Marble Canyon</p>
+        </div>
+      </div>
+
+      <!-- 6. Bandhavgarh -->
+      <div class="destination-card" data-category="wildlife">
+        <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=700&auto=format&fit=crop" alt="Bandhavgarh" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Wildlife</span>
+          <h3 class="destination-name">Bandhavgarh</h3>
+          <p class="destination-tagline">Land of the Royal Tiger</p>
+        </div>
+      </div>
+
+      <!-- 7. Orchha -->
+      <div class="destination-card" data-category="heritage">
+        <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=700&auto=format&fit=crop" alt="Orchha Fort" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Heritage</span>
+          <h3 class="destination-name">Orchha</h3>
+          <p class="destination-tagline">Palaces of Bundela Kings</p>
+        </div>
+      </div>
+
+      <!-- 8. Mandu -->
+      <div class="destination-card" data-category="heritage">
+        <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=700&auto=format&fit=crop" alt="Mandu Jahaz Mahal" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Heritage</span>
+          <h3 class="destination-name">Mandu</h3>
+          <p class="destination-tagline">The City of Joy</p>
+        </div>
+      </div>
+
+      <!-- 9. Kanha -->
+      <div class="destination-card" data-category="wildlife">
+        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=700&auto=format&fit=crop" alt="Kanha" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Wildlife</span>
+          <h3 class="destination-name">Kanha</h3>
+          <p class="destination-tagline">The Jungle Book Realm</p>
+        </div>
+      </div>
+
+      <!-- 10. Omkareshwar -->
+      <div class="destination-card" data-category="spiritual">
+        <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=700&auto=format&fit=crop" alt="Omkareshwar" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Spiritual</span>
+          <h3 class="destination-name">Omkareshwar</h3>
+          <p class="destination-tagline">Island of Lord Shiva</p>
+        </div>
+      </div>
+
+      <!-- 11. Bhimbetka -->
+      <div class="destination-card" data-category="heritage">
+        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=700&auto=format&fit=crop" alt="Bhimbetka" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Heritage</span>
+          <h3 class="destination-name">Bhimbetka</h3>
+          <p class="destination-tagline">Prehistoric Rock Shelters</p>
+        </div>
+      </div>
+
+      <!-- 12. Pench -->
+      <div class="destination-card" data-category="wildlife">
+        <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?q=80&w=700&auto=format&fit=crop" alt="Pench" />
+        <div class="destination-overlay">
+          <span class="badge-tag">Wildlife</span>
+          <h3 class="destination-name">Pench</h3>
+          <p class="destination-tagline">Mowgli's Dense Habitat</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experiences Section -->
+  <section class="experiences-section" id="experiences">
+    <div class="section-header">
+      <div>
+        <span class="section-eyebrow">- UNFORGETTABLE -</span>
+        <h2 class="section-main-title">Experiences in MP</h2>
+      </div>
+    </div>
+
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-image">
+          <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=600&auto=format&fit=crop" alt="Wildlife Safari">
+        </div>
+        <div class="exp-body">
+          <h3>Tiger Safari & Wildlife</h3>
+          <p>Embark on early-morning open jeep safaris in Bandhavgarh, Kanha, and Pench to witness the Royal Bengal tiger in pristine wilderness.</p>
+          <a href="https://wa.me/917987407620?text=I%20want%20to%20book%20a%20Wildlife%20Safari%20Experience%20in%20MP." target="_blank" class="exp-link">Book Safari <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-image">
+          <img src="https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?q=80&w=600&auto=format&fit=crop" alt="Spiritual Darshan">
+        </div>
+        <div class="exp-body">
+          <h3>Spiritual Aarti & Yatras</h3>
+          <p>Attend the sacred early-morning Bhasma Aarti at Mahakaleshwar, take holy boat dips in the Narmada River, and trace Jyotirlinga trails.</p>
+          <a href="https://wa.me/917987407620?text=I%20want%20to%20plan%20a%20Spiritual%20Darshan%20tour%20in%20Ujjain%20and%20Omkareshwar." target="_blank" class="exp-link">Plan Darshan <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-image">
+          <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=600&auto=format&fit=crop" alt="Heritage Trails">
+        </div>
+        <div class="exp-body">
+          <h3>Heritage Walks & Shows</h3>
+          <p>Witness the vibrant sound & light shows at Gwalior Fort and Khajuraho, and explore the ancient architecture of Orchha and Mandu.</p>
+          <a href="https://wa.me/917987407620?text=I%20am%20interested%20in%20Heritage%20Walks%20and%20Sound-Light%20shows." target="_blank" class="exp-link">Explore Heritage <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-image">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop" alt="Marble River Boating">
+        </div>
+        <div class="exp-body">
+          <h3>Boating & Nature Escapes</h3>
+          <p>Glide through the luminescent Bhedaghat marble canyon under the moonlight and hike to scenic viewpoints in the Satpura hills.</p>
+          <a href="https://wa.me/917987407620?text=I%20want%20to%20experience%20Marble%20Rocks%20boating%20and%20Satpura%20retreats." target="_blank" class="exp-link">Reserve Tour <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan Your Trip Section with WhatsApp Integration -->
+  <section class="plan-section" id="plan">
+    <div class="plan-container">
+      <div class="plan-header">
+        <h2>Plan Your Custom Trip to MP</h2>
+        <p>Choose your preferences below and instantly connect with our MP tourism consultant on WhatsApp.</p>
+      </div>
+
+      <form class="plan-form" onsubmit="handleTripPlan(event)">
+        <div class="form-group">
+          <label><i class="fa-solid fa-location-dot"></i> Primary Region</label>
+          <select id="planRegion">
+            <option value="All Madhya Pradesh Highlights">All MP Highlights (Comprehensive)</option>
+            <option value="Heritage Trail (Gwalior, Orchha, Khajuraho)">Heritage Trail (Gwalior - Orchha - Khajuraho)</option>
+            <option value="Spiritual Circuit (Ujjain, Omkareshwar, Maheshwar)">Spiritual Circuit (Ujjain - Omkareshwar)</option>
+            <option value="Wild Wilderness (Bandhavgarh, Kanha, Pench)">Tiger Wilderness (Bandhavgarh - Kanha - Pench)</option>
+            <option value="Nature Retreat (Pachmarhi, Bhedaghat)">Nature Retreat (Pachmarhi - Bhedaghat)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fa-solid fa-calendar-days"></i> Duration</label>
+          <select id="planDuration">
+            <option value="3 to 4 Days (Quick Getaway)">3 to 4 Days (Quick Getaway)</option>
+            <option value="5 to 7 Days (Popular Circuit)" selected>5 to 7 Days (Popular Circuit)</option>
+            <option value="8 to 12 Days (Grand Madhya Pradesh)">8 to 12 Days (Grand Tour)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fa-solid fa-users"></i> Travel Group</label>
+          <select id="planGroup">
+            <option value="Family Vacation">Family Vacation</option>
+            <option value="Couple / Honeymoon">Couple / Honeymoon</option>
+            <option value="Solo Traveler">Solo Traveler</option>
+            <option value="Friends Adventure">Friends Adventure</option>
+          </select>
+        </div>
+
+        <div class="plan-btn-wrapper">
+          <button type="submit" class="plan-submit-btn">
+            <i class="fa-brands fa-whatsapp"></i> Generate Custom Itinerary on WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <div class="map-outer-container">
+    <section class="map-section" id="explore-map">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">- ROUTE PLANNER -</span>
+          <h2 class="section-main-title">Interactive Map of MP</h2>
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <div class="map-sidebar">
+          <div>
+            <h3>Plan Your Route</h3>
+            <p>Click any destination to fly directly to its location on the central India map.</p>
+            <ul class="pin-list" id="locationList"></ul>
+          </div>
+          <div>
+            <a href="https://wa.me/917987407620?text=I%20need%20help%20planning%20my%20Madhya%20Pradesh%20itinerary." target="_blank" class="hero-cta" style="width: 100%; justify-content: center; font-size: 0.85rem;">
+              <i class="fa-brands fa-whatsapp"></i>&nbsp; Plan on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div id="mpMap"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Pillars Section -->
+  <footer class="features-banner">
+    <div class="features-inner">
+      <div class="feature-item">
+        <i class="fa-solid fa-landmark-dome feature-icon"></i>
+        <h4 class="feature-title">Rich Heritage</h4>
+        <p class="feature-desc">Centuries of glorious history</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-leaf feature-icon"></i>
+        <h4 class="feature-title">Breathtaking Nature</h4>
+        <p class="feature-desc">Forests, waterfalls & wildlife</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-spa feature-icon"></i>
+        <h4 class="feature-title">Spiritual Bliss</h4>
+        <p class="feature-desc">Sacred journeys & peace</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-users feature-icon"></i>
+        <h4 class="feature-title">Vibrant Culture</h4>
+        <p class="feature-desc">Festivals, food & traditions</p>
+      </div>
+      <div class="banner-quote">
+        Madhya Pradesh<br>Invites You
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-contact">
+    <a href="https://wa.me/917987407620?text=Hello%20Madhya%20Pradesh%20Tourism!" target="_blank" class="float-btn wa" title="Chat on WhatsApp (+91 7987407620)">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="float-btn ig" title="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <script>
+    const destinations = [
+      { name: "Gwalior Fort", coords: [26.2298, 78.1734], tag: "Heritage" },
+      { name: "Khajuraho", coords: [24.8318, 79.9199], tag: "Heritage & Art" },
+      { name: "Ujjain", coords: [23.1765, 75.7885], tag: "Mahakaleshwar Temple" },
+      { name: "Sanchi Stupa", coords: [23.4800, 77.7400], tag: "Buddhist Heritage" },
+      { name: "Pachmarhi", coords: [22.4674, 78.4346], tag: "Hill Station & Falls" },
+      { name: "Bhedaghat", coords: [23.1311, 79.8005], tag: "Marble Rocks & Dhuandhar" },
+      { name: "Bandhavgarh", coords: [23.7042, 81.0267], tag: "Tiger Reserve" },
+      { name: "Orchha", coords: [25.3516, 78.6416], tag: "Bundela Forts" },
+      { name: "Mandu", coords: [22.3660, 75.3423], tag: "Afghani Architecture" },
+      { name: "Kanha", coords: [22.3345, 80.6115], tag: "National Park" }
+    ];
+
+    const map = leafletMapInit();
+
+    function leafletMapInit() {
+      const m = L.map('mpMap').setView([23.5, 78.5], 7);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(m);
+
+      const listContainer = document.getElementById('locationList');
+
+      destinations.forEach(item => {
+        const marker = L.marker(item.coords).addTo(m)
+          .bindPopup(`<b>${item.name}</b><br>${item.tag}`);
+
+        const li = document.createElement('li');
+        li.className = 'pin-item';
+        li.innerHTML = `<i class="fa-solid fa-location-pin"></i> <div><strong>${item.name}</strong><br><small style="color:#718096">${item.tag}</small></div>`;
+        li.onclick = () => {
+          m.flyTo(item.coords, 11, { duration: 1.5 });
+          marker.openPopup();
+        };
+        listContainer.appendChild(li);
+      });
+
+      return m;
+    }
+
+    function filterCards(category, btnElement) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.destination-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function handleTripPlan(event) {
+      event.preventDefault();
+      const region = document.getElementById('planRegion').value;
+      const duration = document.getElementById('planDuration').value;
+      const group = document.getElementById('planGroup').value;
+
+      const message = `Hello! I would like to plan a trip to Madhya Pradesh:%0A%0A` +
+                      `📍 *Region:* ${encodeURIComponent(region)}%0A` +
+                      `⏱ *Duration:* ${encodeURIComponent(duration)}%0A` +
+                      `👥 *Group:* ${encodeURIComponent(group)}%0A%0A` +
+                      `Please share recommended itineraries and package details!`;
+
+      window.open(`https://wa.me/917987407620?text=${message}`, '_blank');
+    }
+  </script>
+</body>
+</html>

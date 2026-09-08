@@ -1,0 +1,765 @@
+:root {
+  --primary-dark: #0f3832;
+  --primary-accent: #175249;
+  --gold-accent: #c4945d;
+  --text-dark: #1e293b;
+  --text-muted: #475569;
+  --bg-cream: #faf7f2;
+  --card-radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Primary visible background using provided Panna image */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #0b1f1c;
+  background-image: 
+    linear-gradient(180deg, rgba(250, 247, 242, 0.82) 0%, rgba(245, 240, 230, 0.85) 50%, rgba(230, 222, 205, 0.90) 100%),
+    url('panna_mp_2.jpg'),
+    url('panna_mp.jpg'),
+    url('https://www.trodly.com/pictures/upload/image/offbeat-madhya-pradesh/panna_mp.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Navigation */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(212, 163, 115, 0.25);
+}
+
+.navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+.emblem-icon {
+  font-size: 32px;
+  color: #b25d25;
+}
+
+.brand-text .title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.brand-text .tagline {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-btn.wa:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+.social-btn.ig:hover {
+  background: #e1306c;
+  color: #fff;
+}
+
+.btn-explore {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-explore:hover {
+  background: var(--primary-accent);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px 6% 80px;
+  background: 
+    linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(255,255,255,0.02) 40%, rgba(255,248,235,0.85) 75%, rgba(255,248,235,0.96) 100%),
+    url('https://images.unsplash.com/photo-1609948549822-0d19f6a7d7cb?q=80&w=1920&auto=format&fit=crop') left center/cover no-repeat;
+}
+
+.location-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(10px);
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero-content {
+  max-width: 580px;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-subhead {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 5px;
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.hero-desc {
+  font-size: 1.25rem;
+  color: #334155;
+  margin-bottom: 20px;
+}
+
+.hero-tags {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #64748b;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(15, 56, 50, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+}
+
+.cursive-accent {
+  position: absolute;
+  right: 40px;
+  bottom: 50px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #6b3410;
+  font-size: 1.85rem;
+  line-height: 1.2;
+  text-align: right;
+  transform: rotate(-5deg);
+}
+
+/* Shared Section Headers */
+.section-eyebrow {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  color: #475569;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section-main-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Destinations Section */
+.destinations-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 70px 24px 80px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: 1px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary-dark);
+  color: #fff;
+  border-color: var(--primary-dark);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.destination-card {
+  position: relative;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  aspect-ratio: 9/16;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background: #e2e8f0;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.28);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.08);
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 45%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px 14px;
+  color: #fff;
+}
+
+.badge-tag {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.destination-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.destination-tagline {
+  font-size: 0.75rem;
+  color: #e2e8f0;
+  line-height: 1.25;
+}
+
+/* Experiences Section */
+.experiences-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.exp-card {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+}
+
+.exp-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.exp-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.exp-card:hover .exp-image img {
+  transform: scale(1.08);
+}
+
+.exp-body {
+  padding: 22px 18px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.exp-body h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.exp-body p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.exp-link {
+  color: #b25d25;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Plan Your Trip Section with Waterfall Backdrop */
+.plan-section {
+  background: 
+    linear-gradient(135deg, rgba(15, 56, 50, 0.90), rgba(23, 82, 73, 0.88)),
+    url('panna_mp_2.jpg'),
+    url('panna_mp.jpg'),
+    url('https://www.trodly.com/pictures/upload/image/offbeat-madhya-pradesh/panna_mp.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 85px 24px;
+  margin-bottom: 40px;
+}
+
+.plan-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  padding: 42px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.plan-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.3rem;
+  margin-bottom: 8px;
+}
+
+.plan-header p {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.plan-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fcd34d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group select,
+.form-group input {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.plan-btn-wrapper {
+  grid-column: span 3;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.plan-submit-btn {
+  background: #fcd34d;
+  color: #0f3832;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.plan-submit-btn:hover {
+  background: #fef08a;
+  transform: translateY(-2px);
+}
+
+/* Map Section */
+.map-outer-container {
+  position: relative;
+  background: 
+    linear-gradient(to bottom, rgba(250, 247, 242, 0.86), rgba(243, 236, 225, 0.90)),
+    url('panna_mp_2.jpg'),
+    url('panna_mp.jpg'),
+    url('https://www.trodly.com/pictures/upload/image/offbeat-madhya-pradesh/panna_mp.jpg') center/cover;
+  padding: 50px 0 70px;
+}
+
+.map-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.map-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: grid;
+  grid-template-columns: 340px 1fr;
+}
+
+.map-sidebar {
+  padding: 28px 24px;
+  background: rgba(248, 250, 252, 0.95);
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.map-sidebar h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+.map-sidebar p {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.pin-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 320px;
+  padding-right: 6px;
+}
+
+.pin-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  transition: all 0.2s;
+}
+
+.pin-item:hover {
+  background: var(--primary-dark);
+  color: #fff;
+  border-color: var(--primary-dark);
+}
+
+.pin-item i {
+  color: #b25d25;
+}
+
+.pin-item:hover i {
+  color: #fcd34d;
+}
+
+#mpMap {
+  width: 100%;
+  min-height: 480px;
+  z-index: 10;
+}
+
+/* Pillars Bar */
+.features-banner {
+  background: 
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.96)),
+    url('panna_mp_2.jpg'),
+    url('panna_mp.jpg'),
+    url('https://www.trodly.com/pictures/upload/image/offbeat-madhya-pradesh/panna_mp.jpg') center/cover;
+  color: #fff;
+  padding: 55px 24px;
+}
+
+.features-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 30px;
+  align-items: center;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.feature-icon {
+  font-size: 26px;
+  color: #fcd34d;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.feature-desc {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.banner-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.7rem;
+  color: #e2e8f0;
+  text-align: right;
+  line-height: 1.2;
+}
+
+/* Floating Contact Buttons */
+.floating-contact {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.float-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  text-decoration: none;
+  font-size: 24px;
+  transition: transform 0.2s ease;
+}
+
+.float-btn:hover {
+  transform: scale(1.1);
+}
+
+.float-btn.wa { background-color: #25d366; }
+.float-btn.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .card-grid { grid-template-columns: repeat(4, 1fr); }
+  .exp-grid { grid-template-columns: repeat(2, 1fr); }
+  .plan-form { grid-template-columns: repeat(2, 1fr); }
+  .plan-btn-wrapper { grid-column: span 2; }
+  .map-wrapper { grid-template-columns: 1fr; }
+  #mpMap { min-height: 400px; }
+}
+
+@media (max-width: 900px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .features-inner { grid-template-columns: repeat(2, 1fr); }
+  .banner-quote { grid-column: span 2; text-align: center; margin-top: 10px; }
+}
+
+@media (max-width: 650px) {
+  .nav-links { display: none; }
+  .hero { justify-content: center; padding: 40px 16px; }
+  .hero-content { background: rgba(255, 255, 255, 0.92); border-radius: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-grid { grid-template-columns: 1fr; }
+  .plan-form { grid-template-columns: 1fr; }
+  .plan-btn-wrapper { grid-column: span 1; }
+  .plan-container { padding: 24px 18px; }
+  .cursive-accent { display: none; }
+}
